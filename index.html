@@ -9,7 +9,16 @@
   </head>
   <body>
     <main>
-      <section class="player player--1 player--active">
+      <section class="gameRules player player--winner">
+        <h2 class="instructions">Game Rules</h2>
+        <p class="rules"> On a turn, a player rolls the die repeatedly. The goal is to accumulate as many points as possible, adding up the numbers rolled on the die. However, if a player rolls a 1, the player's turn is over and any points they have accumulated during this turn are forfeited. Rolling a 1 doesn't wipe out your entire score from previous turns, just the total earned during that particular roll.
+
+          A player can also choose to hold (stop rolling the die) if they do not want to take a chance of rolling a 1 and losing all of their points from this turn. If the player chooses to hold, all of the points rolled during that turn are added to his or her score.
+          
+          When a player reaches a total of 100 or more points, the game ends and that player is the winner. </p>
+        <button class="btn btn--new3">🎲 Start the game</button>
+      </section>
+      <section class="player player--1 player--active hidden">
         <h2 class="name" id="name--1">Player 1</h2>
         <p class="score" id="score--1">0</p>
         <div class="current">
@@ -18,7 +27,7 @@
         </div>
         <button class="btn btn--new2">🔄 Start a New game</button>
       </section>
-      <section class="player player--2">
+      <section class="player player--2 hidden">
         <h2 class="name" id="name--2">Player 2</h2>
         <p class="score" id="score--2">0</p>
         <div class="current">
@@ -28,10 +37,10 @@
         <button class="btn btn--new2">🔄 Start a New game</button>
       </section>
 
-      <img src="dice-0.png" alt="Playing dice" class="dice" />
-      <button class="btn btn--new">🔄 New game</button>
-      <button class="btn btn--roll">🎲 Roll dice</button>
-      <button class="btn btn--hold">📥 Hold</button>
+      <img src="dice-0.png" alt="Playing dice" class="dice hidden" />
+      <button class="btn btn--new hidden">🔄 New game</button>
+      <button class="btn btn--roll hidden">🎲 Roll dice</button>
+      <button class="btn btn--hold hidden">📥 Hold</button>
     </main>
     <script src="script.js"></script>
   </body>

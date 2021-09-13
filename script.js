@@ -1,4 +1,7 @@
 'use strict';
+let startGameBtn = document.querySelector('.btn--new3');
+let gameRules = document.querySelector('.gameRules');
+
 let newGameBtn = document.querySelector('.btn--new');
 let winnerNewGameBtn = document.querySelectorAll('.btn--new2');
 winnerNewGameBtn[0].style.display = 'none';
@@ -67,7 +70,7 @@ let hold = () => {
     player1.classList.contains('player--1')
   ) {
     player1Score.textContent = Number(player1Score.textContent) + currentScore;
-    if (player1Score.textContent < 20) {
+    if (player1Score.textContent < 100) {
       player1CurrentScore.textContent = 0;
       currentScore = 0;
       switchPlayer();
@@ -82,7 +85,7 @@ let hold = () => {
     }
   } else {
     player2Score.textContent = Number(player2Score.textContent) + currentScore;
-    if (player2Score.textContent < 20) {
+    if (player2Score.textContent < 100) {
       player2CurrentScore.textContent = 0;
       currentScore = 0;
       switchPlayer();
@@ -105,6 +108,7 @@ let newGame = () => {
   player2Score.textContent = 0;
   player1CurrentScore.textContent = 0;
   player2CurrentScore.textContent = 0;
+  gameRules.classList.add('hidden');
   player1.classList.remove('player--winner');
   player1.classList.remove('hidden');
   player1CurrentScore.classList.remove('hidden');
@@ -130,6 +134,7 @@ let newGame = () => {
 rollDiceBtn.addEventListener('click', rollDice);
 diceImg.addEventListener('click', rollDice);
 holdBtn.addEventListener('click', hold);
+startGameBtn.addEventListener('click', newGame);
 newGameBtn.addEventListener('click', newGame);
 winnerNewGameBtn[0].addEventListener('click', newGame);
 winnerNewGameBtn[1].addEventListener('click', newGame);
